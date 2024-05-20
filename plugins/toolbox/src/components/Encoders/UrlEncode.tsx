@@ -10,7 +10,7 @@ export const UrlEncode = () => {
     let url = '';
     let errorMessage = '';
     try {
-      switch(mode){
+      switch (mode) {
         case 'Encode':
           url = encodeURI(input)
           break;
@@ -34,19 +34,19 @@ export const UrlEncode = () => {
   }, [input, mode]);
 
   return (
-      <DefaultEditor
-        input={input}
-        mode={mode}
-        setInput={setInput}
-        setMode={setMode}
-        output={output}
-        modes={['Encode', 'Decode', 'Full Encode', 'Full Decode']}
-        sample={
-          mode === 'Encode' || mode === 'Full Encode'
-            ? 'https://backstage.io/?query= hello\\world{}'
-            : 'https://backstage.io/?query=%20hello%5Cworld%7B%7D'
-        }
-      />
+    <DefaultEditor
+      input={input}
+      mode={mode}
+      setInput={setInput}
+      setMode={setMode}
+      output={output}
+      modes={['Encode', 'Decode', 'Full Encode', 'Full Decode']}
+      sample={
+        mode === 'Encode' || mode === 'Full Encode'
+          ? 'https://backstage.io/?query= hello\\world{}'
+          : 'https://backstage.io/?query=%20hello%5Cworld%7B%7D'
+      }
+    />
   );
 };
 
